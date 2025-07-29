@@ -1,0 +1,528 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CREED AIRLINE - Dashboard</title>
+    <link
+      rel="shortcut icon"
+      href="./image/creed-airline.ico"
+      type="image/x-icon"
+    />
+    <link rel="stylesheet" href="./css/style03.css" />
+    <!-- Bootstrap 5 CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+  </head>
+  <style>
+    .navbar-brand {
+      font-weight: 700;
+      font-size: 1.8rem;
+      color: #245589;
+    }
+  </style>
+  <body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm">
+      <div class="container">
+        <a class="navbar-brand" href="#">
+          <i class="fas fa-plane me-2"></i>CREED AIRLINE & LOGISTICS &copy;
+        </a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link active" href="mypjbt2.html"
+                ><i class="fas fa-home"></i> Home</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#"
+                ><i class="fas fa-plane-departure"></i> Flights</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#"
+                ><i class="fas fa-users"></i> Passengers</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="analytics.html"
+                ><i class="fas fa-chart-line"></i> Analytics</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="settings.html"
+                ><i class="fas fa-cog"></i> Settings</a
+              >
+            </li>
+          </ul>
+          <div class="ms-3">
+            <img
+              src="https://ui-avatars.com/api/?name=Admin+User&background=0a2463&color=fff"
+              alt="User"
+              class="rounded-circle"
+              width="40"
+              height="40"
+            />
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="container my-4">
+      <div class="hero-section">
+        <div class="row align-items-center">
+          <div class="col-md-8">
+            <h1 class="display-4 fw-bold">
+              Welcome to CREED AIRLINE & LOGISTICS &copy;
+            </h1>
+            <p class="lead">
+              Your premier choice for comfortable and reliable air travel.
+            </p>
+            <button class="btn btn-light btn-lg px-4 me-2">View Flights</button>
+            <button class="btn btn-outline-light btn-lg px-4">
+              Manage Bookings
+            </button>
+          </div>
+          <div class="col-md-4 d-none d-md-block"></div>
+        </div>
+      </div>
+
+      <div class="row">
+        <!-- Sidebar -->
+        <div class="col-lg-3 mb-4">
+          <div class="sidebar">
+            <h5
+              class="fw-bold mb-4 text-center"
+              style="color: var(--primary-color)"
+            >
+              Quick Actions
+            </h5>
+            <ul class="nav flex-column">
+              <li class="nav-item">
+                <a class="nav-link active" href="#"
+                  ><i class="fas fa-plus-circle"></i> Add New Flight</a
+                >
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#"
+                  ><i class="fas fa-search"></i> Search Bookings</a
+                >
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#"
+                  ><i class="fas fa-user-plus"></i> Add Passenger</a
+                >
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#"
+                  ><i class="fas fa-file-invoice-dollar"></i> Generate Report</a
+                >
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#"
+                  ><i class="fas fa-bell"></i> Notifications</a
+                >
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#"
+                  ><i class="fas fa-question-circle"></i> Help Center</a
+                >
+              </li>
+            </ul>
+
+            <div class="mt-4 pt-3 border-top">
+              <h6 class="fw-bold mb-3" style="color: var(--primary-color)">
+                Recent Activities
+              </h6>
+              <div class="d-flex mb-3">
+                <div class="flex-shrink-0">
+                  <i class="fas fa-plane text-primary"></i>
+                </div>
+                <div class="flex-grow-1 ms-3">
+                  <small class="text-muted">10 min ago</small>
+                  <p class="mb-0">Flight CA102 to London departed</p>
+                </div>
+              </div>
+              <div class="d-flex mb-3">
+                <div class="flex-shrink-0">
+                  <i class="fas fa-user-check text-success"></i>
+                </div>
+                <div class="flex-grow-1 ms-3">
+                  <small class="text-muted">25 min ago</small>
+                  <p class="mb-0">New booking received</p>
+                </div>
+              </div>
+              <div class="d-flex">
+                <div class="flex-shrink-0">
+                  <i class="fas fa-exclamation-triangle text-warning"></i>
+                </div>
+                <div class="flex-grow-1 ms-3">
+                  <small class="text-muted">1 hour ago</small>
+                  <p class="mb-0">Weather alert for JFK airport</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Main Dashboard Content -->
+        <div class="col-lg-9">
+          <!-- Stats Cards -->
+          <div class="row mb-4">
+            <div class="col-md-3 col-6">
+              <div class="stat-card">
+                <i class="fas fa-plane-departure"></i>
+                <h3>142</h3>
+                <p class="text-muted">Flights Today</p>
+              </div>
+            </div>
+            <div class="col-md-3 col-6">
+              <div class="stat-card">
+                <i class="fas fa-users"></i>
+                <h3>8,742</h3>
+                <p class="text-muted">Passengers Today</p>
+              </div>
+            </div>
+            <div class="col-md-3 col-6">
+              <div class="stat-card">
+                <i class="fas fa-check-circle"></i>
+                <h3>92%</h3>
+                <p class="text-muted">On-Time Rate</p>
+              </div>
+            </div>
+            <div class="col-md-3 col-6">
+              <div class="stat-card">
+                <i class="fas fa-dollar-sign"></i>
+                <h3>$1.2M</h3>
+                <p class="text-muted">Daily Revenue</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Flight Status Card -->
+          <div class="card mb-4 flight-status">
+            <div
+              class="card-header d-flex justify-content-between align-items-center"
+            >
+              <span style="color: azure"
+                ><i class="fas fa-clock me-2"></i> Flight Status</span
+              >
+              <a href="#" class="text-white">View All</a>
+            </div>
+            <div class="card-body">
+              <div class="table-responsive">
+                <table class="table table-hover">
+                  <thead>
+                    <tr>
+                      <th>Flight No.</th>
+                      <th>Route</th>
+                      <th>Departure</th>
+                      <th>Arrival</th>
+                      <th>Status</th>
+                      <th>Progress</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>CA101</td>
+                      <td>JFK → LHR</td>
+                      <td>08:00 AM</td>
+                      <td>08:00 PM</td>
+                      <td>
+                        <span class="badge-status badge-on-time">On Time</span>
+                      </td>
+                      <td>
+                        <div class="flight-progress">
+                          <div
+                            class="flight-progress-bar"
+                            style="width: 25%"
+                          ></div>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>CA205</td>
+                      <td>LAX → CDG</td>
+                      <td>09:30 AM</td>
+                      <td>10:15 PM</td>
+                      <td>
+                        <span class="badge-status badge-on-time">On Time</span>
+                      </td>
+                      <td>
+                        <div class="flight-progress">
+                          <div
+                            class="flight-progress-bar"
+                            style="width: 15%"
+                          ></div>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>CA312</td>
+                      <td>ORD → DFW</td>
+                      <td>10:15 AM</td>
+                      <td>12:45 PM</td>
+                      <td>
+                        <span class="badge-status badge-delayed">Delayed</span>
+                      </td>
+                      <td>
+                        <div class="flight-progress">
+                          <div
+                            class="flight-progress-bar"
+                            style="width: 5%"
+                          ></div>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>CA418</td>
+                      <td>SFO → HNL</td>
+                      <td>11:00 AM</td>
+                      <td>02:30 PM</td>
+                      <td>
+                        <span class="badge-status badge-on-time">On Time</span>
+                      </td>
+                      <td>
+                        <div class="flight-progress">
+                          <div
+                            class="flight-progress-bar"
+                            style="width: 65%"
+                          ></div>
+                        </div>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+
+          <!-- Upcoming Flights and Quick Booking -->
+          <div class="row">
+            <div class="col-md-8">
+              <div class="card">
+                <div class="card-header">
+                  <span style="color: azure"
+                    ><i class="fas fa-calendar-alt me-2"></i> Upcoming
+                    Flights</span
+                  >
+                </div>
+                <div class="card-body">
+                  <div class="list-group">
+                    <a href="#" class="list-group-item list-group-item-action">
+                      <div class="d-flex w-100 justify-content-between">
+                        <h5 class="mb-1">CA501 - New York to Paris</h5>
+                        <small class="text-muted">Tomorrow, 8:00 AM</small>
+                      </div>
+                      <p class="mb-1">
+                        John F. Kennedy Intl (JFK) → Charles de Gaulle (CDG)
+                      </p>
+                      <small class="text-muted">Available seats: 42</small>
+                    </a>
+                    <a href="#" class="list-group-item list-group-item-action">
+                      <div class="d-flex w-100 justify-content-between">
+                        <h5 class="mb-1">CA302 - Los Angeles to Tokyo</h5>
+                        <small class="text-muted">Tomorrow, 10:30 AM</small>
+                      </div>
+                      <p class="mb-1">
+                        Los Angeles Intl (LAX) → Narita Intl (NRT)
+                      </p>
+                      <small class="text-muted">Available seats: 18</small>
+                    </a>
+                    <a href="#" class="list-group-item list-group-item-action">
+                      <div class="d-flex w-100 justify-content-between">
+                        <h5 class="mb-1">CA709 - Chicago to London</h5>
+                        <small class="text-muted">Tomorrow, 1:15 PM</small>
+                      </div>
+                      <p class="mb-1">O'Hare Intl (ORD) → Heathrow (LHR)</p>
+                      <small class="text-muted">Available seats: 56</small>
+                    </a>
+                    <a href="#" class="list-group-item list-group-item-action">
+                      <div class="d-flex w-100 justify-content-between">
+                        <h5 class="mb-1">CA709 - Chicago to London</h5>
+                        <small class="text-muted">Friday, 2:15 PM</small>
+                      </div>
+                      <p class="mb-1">O'Hare Intl (ORD) → Heathrow (LHR)</p>
+                      <small class="text-muted">Available seats: 05</small>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="card">
+                <div class="card-header">
+                  <span style="color: azure"
+                    ><i class="fas fa-ticket-alt me-2"></i> Quick Booking</span
+                  >
+                </div>
+                <div class="card-body">
+                  <form>
+                    <div class="mb-3">
+                      <label class="form-label">From</label>
+                      <select class="form-select">
+                        <option selected>Select departure</option>
+                        <option>New York (JFK)</option>
+                        <option>Los Angeles (LAX)</option>
+                        <option>Chicago (ORD)</option>
+                        <option>San Francisco (SFO)</option>
+                      </select>
+                    </div>
+                    <div class="mb-3">
+                      <label class="form-label">To</label>
+                      <select class="form-select">
+                        <option selected>Select destination</option>
+                        <option>London (LHR)</option>
+                        <option>Paris (CDG)</option>
+                        <option>Tokyo (NRT)</option>
+                        <option>Dubai (DXB)</option>
+                      </select>
+                    </div>
+                    <div class="mb-3">
+                      <label class="form-label">Departure Date</label>
+                      <input type="date" class="form-control" />
+                    </div>
+                    <div class="mb-3">
+                      <label class="form-label">Passengers</label>
+                      <input
+                        type="number"
+                        class="form-control"
+                        value="1"
+                        min="1"
+                      />
+                    </div>
+                    <button type="submit" class="btn btn-primary w-100">
+                      Search Flights
+                    </button>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <footer>
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-4 mb-4">
+            <h4 class="mb-4">
+              <i class="fas fa-plane me-2"></i>CREED AIRLINES & LOGISTICS &copy;
+            </h4>
+            <p>
+              Your trusted partner for comfortable and affordable air travel to
+              destinations around the globe.
+            </p>
+            <div class="mt-4">
+              <a href="https://wa.me/qr/X6S43462GVKQE1" class="social-icon"
+                ><i class="fab fa-whatsapp"></i
+              ></a>
+              <a href="https://t.snapchat.com/bAb40eeA" class="social-icon"
+                ><i class="fab fa-snapchat"></i
+              ></a>
+              <a
+                href="https://x.com/Apataofisland?t=jxfwpUtyrLLHG7VfGitVtg&s=09"
+                class="social-icon"
+                ><i class="fab fa-twitter"></i
+              ></a>
+              <a
+                href="https://www.instagram.com/invites/contact/?utm_source=ig_contact_invite&utm_medium=copy_link&utm_content=qbf8guk"
+                class="social-icon"
+                ><i class="fab fa-instagram"></i
+              ></a>
+            </div>
+          </div>
+
+          <div class="col-lg-2 col-md-6 mb-4">
+            <h5 class="mb-4">Quick Links</h5>
+            <ul class="list-unstyled">
+              <li class="mb-2">
+                <a href="#" class="text-white text-decoration-none">Home</a>
+              </li>
+              <li class="mb-2">
+                <a href="#" class="text-white text-decoration-none">Flights</a>
+              </li>
+              <li class="mb-2">
+                <a href="#" class="text-white text-decoration-none"
+                  >Destinations</a
+                >
+              </li>
+              <li class="mb-2">
+                <a href="#" class="text-white text-decoration-none">Deals</a>
+              </li>
+              <li class="mb-2">
+                <a href="#" class="text-white text-decoration-none">About Us</a>
+              </li>
+            </ul>
+          </div>
+
+          <div class="col-lg-3 col-md-6 mb-4">
+            <h5 class="mb-4">Contact Us</h5>
+            <ul class="list-unstyled">
+              <li class="mb-2">
+                <i class="fas fa-map-marker-alt me-2"></i> 123 Aviation Way, New
+                York, NY
+              </li>
+              <li class="mb-2">
+                <i class="fas fa-phone me-2"></i> +1 (800) 123-4567
+              </li>
+              <li class="mb-2">
+                <i class="fas fa-envelope me-2"></i> info@creedairlines.com
+              </li>
+            </ul>
+          </div>
+
+          <div class="col-lg-3 mb-4">
+            <h5 class="mb-4">Newsletter</h5>
+            <p>Subscribe to get updates on special offers and promotions.</p>
+            <div class="input-group mb-3">
+              <input
+                type="email"
+                class="form-control"
+                placeholder="Your Email"
+              />
+              <button class="btn btn-primary" type="button">Subscribe</button>
+            </div>
+          </div>
+        </div>
+
+        <hr class="my-4 bg-light" />
+
+        <div class="row">
+          <div class="col-md-6 text-center text-md-start">
+            <p class="mb-0">
+              &copy; 2025 Creed Airlines & logistics. All rights reserved.
+            </p>
+          </div>
+          <div class="col-md-6 text-center text-md-end">
+            <a href="#" class="text-white text-decoration-none me-3"
+              >Privacy Policy</a
+            >
+            <a href="#" class="text-white text-decoration-none"
+              >Terms of Service</a
+            >
+          </div>
+        </div>
+      </div>
+    </footer>
+    <!-- Bootstrap 5 JS Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>

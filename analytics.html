@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Creed Airlines & Logistics - Analytics Dashboard</title>
+    <link rel="shortcut icon" href="./image/creed-airline.ico" type="image/x-icon">
+    <link rel="stylesheet" href="./css/style04.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+        <div class="main-content">
+            <div class="header">
+                <h2 style="color: #eee;">Analytics Dashboard</h2>
+                <a href="dashboard.html"><button class="btnt">HOME</button>
+                 </a>
+                </div>
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <h3>Total Flights Today</h3>
+                    <p class="value">142</p>
+                    <p class="change positive">↑ 8% from yesterday</p>
+                </div>
+                <div class="stat-card">
+                    <h3>Passengers Today</h3>
+                    <p class="value">18,742</p>
+                    <p class="change positive">↑ 12% from yesterday</p>
+                </div>
+                <div class="stat-card">
+                    <h3>Cargo Weight (kg)</h3>
+                    <p class="value">256,890</p>
+                    <p class="change negative">↓ 5% from yesterday</p>
+                </div>
+                <div class="stat-card">
+                    <h3>On-Time Performance</h3>
+                    <p class="value">89.2%</p>
+                    <p class="change positive">↑ 2.1% from last week</p>
+                </div>
+            </div>
+            
+            <div class="charts-row">
+                <div class="chart-card">
+                    <h3>Flight Volume - Last 30 Days</h3>
+                    <canvas id="flightVolumeChart"></canvas>
+                </div>
+                <div class="chart-card">
+                    <h3>Revenue Breakdown</h3>
+                    <canvas id="revenueChart"></canvas>
+                </div>
+            </div>
+            
+            <div class="bottom-row">
+                <div class="chart-card">
+                    <h3>Recent Flights</h3>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Flight No.</th>
+                                <th>Route</th>
+                                <th>Departure</th>
+                                <th>Status</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>CA201</td>
+                                <td>JFK - LHR</td>
+                                <td>08:45 AM</td>
+                                <td><span class="status on-time">On Time</span></td>
+                            </tr>
+                            <tr>
+                                <td>CA456</td>
+                                <td>LAX - HND</td>
+                                <td>09:30 AM</td>
+                                <td><span class="status delayed">Delayed</span></td>
+                            </tr>
+                            <tr>
+                                <td>CA789</td>
+                                <td>ORD - FRA</td>
+                                <td>10:15 AM</td>
+                                <td><span class="status on-time">On Time</span></td>
+                            </tr>
+                            <tr>
+                                <td>CA321</td>
+                                <td>DFW - CDG</td>
+                                <td>11:00 AM</td>
+                                <td><span class="status on-time">On Time</span></td>
+                            </tr>
+                            <tr>
+                                <td>CA654</td>
+                                <td>SFO - SYD</td>
+                                <td>11:45 AM</td>
+                                <td><span class="status cancelled">Cancelled</span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="chart-card">
+                    <h3>Top Routes by Passenger Volume</h3>
+                    <canvas id="routesChart"></canvas>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        // Flight Volume Chart
+        const flightCtx = document.getElementById('flightVolumeChart').getContext('2d');
+        const flightVolumeChart = new Chart(flightCtx, {
+            type: 'line',
+            data: {
+                labels: ['Day 1', 'Day 2', 'Day 3', 'Day 4', 'Day 5', 'Day 6', 'Day 7', 'Day 8', 'Day 9', 'Day 10', 
+                        'Day 11', 'Day 12', 'Day 13', 'Day 14', 'Day 15', 'Day 16', 'Day 17', 'Day 18', 'Day 19', 'Day 20',
+                        'Day 21', 'Day 22', 'Day 23', 'Day 24', 'Day 25', 'Day 26', 'Day 27', 'Day 28', 'Day 29', 'Day 30'],
+                datasets: [{
+                    label: 'Commercial Flights',
+                    data: [120, 125, 118, 122, 130, 128, 132, 135, 140, 138, 142, 145, 140, 138, 135, 140, 145, 148, 150, 152, 
+                           150, 148, 152, 155, 158, 160, 162, 165, 160, 158],
+                    borderColor: '#003366',
+                    backgroundColor: 'rgba(0, 51, 102, 0.1)',
+                    borderWidth: 2,
+                    fill: true,
+                    tension: 0.4
+                }, {
+                    label: 'Cargo Flights',
+                    data: [30, 32, 28, 31, 35, 34, 36, 38, 40, 42, 45, 42, 40, 38, 40, 42, 45, 48, 50, 52, 
+                           50, 48, 45, 48, 50, 52, 55, 58, 60, 62],
+                    borderColor: '#FF9900',
+                    backgroundColor: 'rgba(255, 153, 0, 0.1)',
+                    borderWidth: 2,
+                    fill: true,
+                    tension: 0.4
+                }]
+            },
+            options: {
+                responsive: true,
+                plugins: {
+                    legend: {
+                        position: 'top',
+                    },
+                },
+                scales: {
+                    y: {
+                        beginAtZero: false,
+                        min: 100
+                    }
+                }
+            }
+        });
+        
+        // Revenue Chart
+        const revenueCtx = document.getElementById('revenueChart').getContext('2d');
+        const revenueChart = new Chart(revenueCtx, {
+            type: 'doughnut',
+            data: {
+                labels: ['Passenger Tickets', 'Cargo Services', 'Ancillary Services', 'Other'],
+                datasets: [{
+                    data: [65, 25, 8, 2],
+                    backgroundColor: [
+                        '#003366',
+                        '#FF9900',
+                        '#6699CC',
+                        '#DDDDDD'
+                    ],
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                responsive: true,
+                plugins: {
+                    legend: {
+                        position: 'right',
+                    },
+                }
+            }
+        });
+        
+        // Routes Chart
+        const routesCtx = document.getElementById('routesChart').getContext('2d');
+        const routesChart = new Chart(routesCtx, {
+            type: 'bar',
+            data: {
+                labels: ['JFK-LHR', 'LAX-HND', 'ORD-FRA', 'DFW-CDG', 'SFO-SYD'],
+                datasets: [{
+                    label: 'Passengers (thousands)',
+                    data: [45, 38, 32, 28, 25],
+                    backgroundColor: [
+                        '#003366',
+                        '#FF9900',
+                        '#6699CC',
+                        '#003366',
+                        '#FF9900'
+                    ],
+                    borderWidth: 0
+                }]
+            },
+            options: {
+                responsive: true,
+                plugins: {
+                    legend: {
+                        display: false
+                    },
+                },
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                }
+            }
+        });
+    </script>
+</body>
+</html>

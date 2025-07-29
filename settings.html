@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Settings - CREED AIRLINE & LOGISTICS</title>
+    <link rel="shortcut icon" href="./image/creed-airline.ico" type="image/x-icon">
+    <style>
+        :root {
+            --primary-color: #003366;    /* Dark blue */
+            --secondary-color: #0066cc;  /* Medium blue */
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, var(--secondary-color), var(--primary-color));
+            color: white;
+            min-height: 100vh;
+             background: linear-gradient(rgba(0, 84, 179, 0.7), rgba(0, 51, 102, 0.8)), 
+                        url('https://images.unsplash.com/photo-1436491865332-7a61a109cc05?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+            margin-bottom: 30px;
+        }
+        
+        .logo {
+            font-size: 28px;
+            font-weight: bold;
+        }
+        
+        .logo span {
+            color: #ffcc00;
+        }
+        
+        .user-profile {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .user-avatar {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: rgba(255, 255, 255, 0.2);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        h1 {
+            margin-bottom: 30px;
+            font-weight: 300;
+        }
+        
+        .settings-container {
+            display: grid;
+            grid-template-columns: 250px 1fr;
+            gap: 30px;
+        }
+        
+        .settings-sidebar {
+            background-color: rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            padding: 20px;
+        }
+        
+        .settings-sidebar nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        
+        .settings-sidebar nav li {
+            margin-bottom: 15px;
+        }
+        
+        .settings-sidebar nav a {
+            color: white;
+            text-decoration: none;
+            display: block;
+            padding: 8px 12px;
+            border-radius: 4px;
+            transition: all 0.3s ease;
+        }
+        
+        .settings-sidebar nav a:hover, 
+        .settings-sidebar nav a.active {
+            background-color:#ffcc00
+        }
+        
+        .settings-content {
+            background-color: rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            padding: 30px;
+        }
+        
+        .settings-section {
+            margin-bottom: 40px;
+        }
+        
+        .settings-section h2 {
+            margin-top: 0;
+            margin-bottom: 20px;
+            font-weight: 400;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+            padding-bottom: 10px;
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+        }
+        
+        .form-group input, 
+        .form-group select {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            border-radius: 4px;
+            background-color: rgba(0, 0, 0, 0.2);
+            color: white;
+        }
+        
+        .form-group input:focus, 
+        .form-group select:focus {
+            outline: none;
+            border-color: #ffcc00;
+        }
+        
+        .checkbox-group {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+        
+        .checkbox-group input {
+            margin-right: 10px;
+        }
+        
+        button {
+            background-color: #ffcc00;
+            color: #003366;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: all 0.3s ease;
+        }
+        
+        button:hover {
+            background-color: #ffd633;
+        }
+        
+        .two-columns {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+        
+        @media (max-width: 768px) {
+            .settings-container {
+                grid-template-columns: 1fr;
+            }
+            
+            .two-columns {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+         <div class="logo">&#9992; CREED <span>AIRLINE</span> & LOGISTICS &copy;</div>
+            <div class="user-profile">
+                <div class="user-avatar">JD</div>
+                <span>John Doe</span>
+            </div>
+        </header>
+        
+        <h1>Account Settings</h1>
+        
+        <div class="settings-container">
+            <div class="settings-sidebar">
+                <nav>
+                    <ul>
+                        <li><a href="#" class="active">Profile Information</a></li>
+                        <li><a href="#">Security</a></li>
+                        <li><a href="#">Notifications</a></li>
+                        <li><a href="#">Booking Preferences</a></li>
+                        <li><a href="#">Payment Methods</a></li>
+                        <li><a href="#">Loyalty Program</a></li>
+                        <li><a href="#">Privacy Settings</a></li>
+                          <li><a href="dashboard.html">Home</a></li>
+                    </ul>
+                </nav>
+            </div>
+            
+            <div class="settings-content">
+                <div class="settings-section">
+                    <h2>Personal Information</h2>
+                    <div class="two-columns">
+                        <div class="form-group">
+                            <label for="first-name">First Name</label>
+                            <input type="text" id="first-name" value="John">
+                        </div>
+                        <div class="form-group">
+                            <label for="last-name">Last Name</label>
+                            <input type="text" id="last-name" value="Doe">
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="email">Email Address</label>
+                        <input type="email" id="email" value="john.doe@example.com">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="phone">Phone Number</label>
+                        <input type="tel" id="phone" value="+1 (555) 123-4567">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="dob">Date of Birth</label>
+                        <input type="date" id="dob" value="1985-05-15">
+                    </div>
+                </div>
+                
+                <div class="settings-section">
+                    <h2>Communication Preferences</h2>
+                    <div class="checkbox-group">
+                        <input type="checkbox" id="email-promo" checked>
+                        <label for="email-promo">Receive promotional emails</label>
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="checkbox" id="email-updates" checked>
+                        <label for="email-updates">Receive flight status updates</label>
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="checkbox" id="sms-alerts">
+                        <label for="sms-alerts">Receive SMS alerts</label>
+                    </div>
+                </div>
+                
+                <div class="settings-section">
+                    <h2>Travel Preferences</h2>
+                    <div class="form-group">
+                        <label for="seat-pref">Seat Preference</label>
+                        <select id="seat-pref">
+                            <option>Window</option>
+                            <option selected>Aisle</option>
+                            <option>Middle</option>
+                            <option>No preference</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="meal-pref">Meal Preference</label>
+                        <select id="meal-pref">
+                            <option selected>Regular</option>
+                            <option>Vegetarian</option>
+                            <option>Vegan</option>
+                            <option>Gluten-free</option>
+                            <option>Kosher</option>
+                            <option>Halal</option>
+                        </select>
+                    </div>
+                    
+                    <div class="checkbox-group">
+                        <input type="checkbox" id="special-assistance">
+                        <label for="special-assistance">Require special assistance</label>
+                    </div>
+                </div>
+                
+                <button>Save Changes</button>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

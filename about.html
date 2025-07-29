@@ -1,0 +1,1055 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CREED AIRLINE & LOGISTICS - Aviation Excellence</title>
+    <link
+      rel="shortcut icon"
+      href="./image/creed-airline.ico"
+      type="image/x-icon"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <style>
+      :root {
+        --primary-color: #003366;
+        --secondary-color: #0066cc;
+        --accent-color: #ffcc00;
+        --dark-color: #001a33;
+        --light-color: #f8f9fa;
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        color: #333;
+        line-height: 1.6;
+        overflow-x: hidden;
+      }
+
+      /* Header Styles */
+      header {
+        background: linear-gradient(
+          135deg,
+          var(--secondary-color),
+          var(--primary-color)
+        );
+        color: white;
+        padding: 1rem 0;
+        position: fixed;
+        width: 100%;
+        z-index: 1000;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        transition: all 0.3s ease;
+      }
+
+      .header-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 2rem;
+      }
+
+      .logo {
+        font-size: 1.8rem;
+        font-weight: 700;
+        display: flex;
+        align-items: center;
+      }
+
+      .logo span {
+        color: var(--accent-color);
+        margin-left: 0.5rem;
+      }
+
+      .logo i {
+        margin-right: 0.5rem;
+        font-size: 1.5rem;
+      }
+
+      nav ul {
+        display: flex;
+        list-style: none;
+      }
+
+      nav ul li {
+        margin-left: 1.5rem;
+      }
+
+      nav ul li a {
+        color: white;
+        text-decoration: none;
+        font-weight: 500;
+        transition: color 0.3s ease;
+        position: relative;
+      }
+
+      nav ul li a:hover {
+        color: var(--accent-color);
+      }
+
+      nav ul li a::after {
+        content: "";
+        position: absolute;
+        width: 0;
+        height: 2px;
+        background: var(--accent-color);
+        bottom: -5px;
+        left: 0;
+        transition: width 0.3s ease;
+      }
+
+      nav ul li a:hover::after {
+        width: 100%;
+      }
+
+      .mobile-menu-btn {
+        display: none;
+        background: none;
+        border: none;
+        color: white;
+        font-size: 1.5rem;
+        cursor: pointer;
+      }
+
+      /* Hero Section */
+      .hero {
+        height: 100vh;
+        background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+          url("https://images.unsplash.com/photo-1436491865332-7a61a109cc05?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80")
+            no-repeat center center/cover;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        color: white;
+        padding-top: 80px;
+      }
+
+      .hero-content {
+        max-width: 800px;
+        padding: 0 2rem;
+      }
+
+      .hero h1 {
+        font-size: 3.5rem;
+        margin-bottom: 1rem;
+        font-weight: 700;
+      }
+
+      .hero p {
+        font-size: 1.2rem;
+        margin-bottom: 2rem;
+      }
+
+      .btn {
+        display: inline-block;
+        background: var(--accent-color);
+        color: var(--primary-color);
+        padding: 0.8rem 2rem;
+        border: none;
+        border-radius: 5px;
+        font-weight: 600;
+        text-decoration: none;
+        transition: all 0.3s ease;
+        cursor: pointer;
+      }
+
+      .btn:hover {
+        background: #e6b800;
+        transform: translateY(-3px);
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+      }
+
+      /* About Section */
+      .about {
+        padding: 5rem 2rem;
+        background: var(--light-color);
+      }
+
+      .section-title {
+        text-align: center;
+        margin-bottom: 3rem;
+      }
+
+      .section-title h2 {
+        font-size: 2.5rem;
+        color: var(--primary-color);
+        margin-bottom: 1rem;
+      }
+
+      .section-title p {
+        color: #666;
+        max-width: 700px;
+        margin: 0 auto;
+      }
+
+      .about-content {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 3rem;
+        max-width: 1200px;
+        margin: 0 auto;
+        align-items: center;
+      }
+
+      .about-text h3 {
+        font-size: 1.8rem;
+        color: var(--primary-color);
+        margin-bottom: 1.5rem;
+      }
+
+      .about-text p {
+        margin-bottom: 1.5rem;
+      }
+
+      .about-stats {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 1.5rem;
+        margin-top: 2rem;
+      }
+
+      .stat-item {
+        background: white;
+        padding: 1.5rem;
+        border-radius: 5px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        text-align: center;
+      }
+
+      .stat-item h4 {
+        font-size: 2.5rem;
+        color: var(--primary-color);
+        margin-bottom: 0.5rem;
+      }
+
+      .about-image img {
+        width: 100%;
+        border-radius: 10px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+      }
+
+      /* Services Section */
+      .services {
+        padding: 5rem 2rem;
+        background: white;
+      }
+
+      .services-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 2rem;
+        max-width: 1200px;
+        margin: 0 auto;
+      }
+
+      .service-card {
+        background: var(--light-color);
+        border-radius: 10px;
+        overflow: hidden;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        transition: all 0.3s ease;
+      }
+
+      .service-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+      }
+
+      .service-img {
+        height: 200px;
+        overflow: hidden;
+      }
+
+      .service-img img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.5s ease;
+      }
+
+      .service-card:hover .service-img img {
+        transform: scale(1.1);
+      }
+
+      .service-content {
+        padding: 1.5rem;
+      }
+
+      .service-content h3 {
+        font-size: 1.5rem;
+        color: var(--primary-color);
+        margin-bottom: 1rem;
+      }
+
+      .service-content p {
+        margin-bottom: 1.5rem;
+      }
+
+      .read-more {
+        color: var(--secondary-color);
+        font-weight: 600;
+        text-decoration: none;
+        display: inline-flex;
+        align-items: center;
+      }
+
+      .read-more i {
+        margin-left: 0.5rem;
+        transition: transform 0.3s ease;
+      }
+
+      .read-more:hover i {
+        transform: translateX(5px);
+      }
+
+      /* Fleet Section */
+      .fleet {
+        padding: 5rem 2rem;
+        background: linear-gradient(
+          135deg,
+          var(--secondary-color),
+          var(--primary-color)
+        );
+        color: white;
+      }
+
+      .fleet .section-title h2,
+      .fleet .section-title p {
+        color: white;
+      }
+
+      .fleet-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 2rem;
+        max-width: 1200px;
+        margin: 0 auto;
+      }
+
+      .fleet-card {
+        background: rgba(255, 255, 255, 0.1);
+        backdrop-filter: blur(10px);
+        border-radius: 10px;
+        overflow: hidden;
+        transition: all 0.3s ease;
+      }
+
+      .fleet-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+      }
+
+      .fleet-img {
+        height: 200px;
+        overflow: hidden;
+      }
+
+      .fleet-img img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.5s ease;
+      }
+
+      .fleet-card:hover .fleet-img img {
+        transform: scale(1.1);
+      }
+
+      .fleet-content {
+        padding: 1.5rem;
+      }
+
+      .fleet-content h3 {
+        font-size: 1.5rem;
+        margin-bottom: 1rem;
+      }
+
+      .fleet-specs {
+        margin: 1.5rem 0;
+      }
+
+      .spec-item {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 0.5rem;
+        padding-bottom: 0.5rem;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      }
+
+      /* Testimonials */
+      .testimonials {
+        padding: 5rem 2rem;
+        background: var(--light-color);
+      }
+
+      .testimonial-slider {
+        max-width: 800px;
+        margin: 0 auto;
+        position: relative;
+      }
+
+      .testimonial {
+        background: white;
+        padding: 2rem;
+        border-radius: 10px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        text-align: center;
+        margin: 0 1rem;
+      }
+
+      .testimonial img {
+        width: 80px;
+        height: 80px;
+        border-radius: 50%;
+        object-fit: cover;
+        margin: 0 auto 1rem;
+        border: 3px solid var(--accent-color);
+      }
+
+      .testimonial p {
+        font-style: italic;
+        margin-bottom: 1.5rem;
+      }
+
+      .testimonial h4 {
+        color: var(--primary-color);
+      }
+
+      .testimonial .rating {
+        color: var(--accent-color);
+        margin-top: 0.5rem;
+      }
+
+      /* Contact Section */
+      .contact {
+        padding: 5rem 2rem;
+        background: white;
+      }
+
+      .contact-container {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 3rem;
+        max-width: 1200px;
+        margin: 0 auto;
+      }
+
+      .contact-info {
+        background: var(--light-color);
+        padding: 2rem;
+        border-radius: 10px;
+      }
+
+      .contact-info h3 {
+        font-size: 1.8rem;
+        color: var(--primary-color);
+        margin-bottom: 1.5rem;
+      }
+
+      .contact-item {
+        display: flex;
+        align-items: flex-start;
+        margin-bottom: 1.5rem;
+      }
+
+      .contact-item i {
+        font-size: 1.2rem;
+        color: var(--secondary-color);
+        margin-right: 1rem;
+        margin-top: 0.3rem;
+      }
+
+      .contact-form input,
+      .contact-form textarea {
+        width: 100%;
+        padding: 1rem;
+        margin-bottom: 1.5rem;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+        font-family: inherit;
+      }
+
+      .contact-form textarea {
+        height: 150px;
+        resize: vertical;
+      }
+       footer {
+            background: linear-gradient(135deg, var(--secondary-color), var(--primary-color));
+            color: white;
+            padding: 3rem 0;
+            margin-top: 3rem;
+        }
+        .social-icon {
+            color: white;
+            font-size: 1.5rem;
+            margin-right: 15px;
+            transition: color 0.3s;
+        }
+         .social-icon:hover {
+            color: #665507;
+        }
+      /* Responsive Styles */
+      @media (max-width: 992px) {
+        .about-content {
+          grid-template-columns: 1fr;
+        }
+
+        .about-image {
+          order: -1;
+        }
+
+        .contact-container {
+          grid-template-columns: 1fr;
+        }
+      }
+
+      @media (max-width: 768px) {
+        .mobile-menu-btn {
+          display: block;
+        }
+
+        nav {
+          position: fixed;
+          top: 80px;
+          left: -100%;
+          width: 100%;
+          height: calc(100vh - 80px);
+          background: var(--primary-color);
+          transition: all 0.3s ease;
+          padding: 2rem;
+        }
+
+        nav.active {
+          left: 0;
+        }
+
+        nav ul {
+          flex-direction: column;
+        }
+
+        nav ul li {
+          margin: 1rem 0;
+        }
+
+        .hero h1 {
+          font-size: 2.5rem;
+        }
+      }
+
+      @media (max-width: 576px) {
+        .hero h1 {
+          font-size: 2rem;
+        }
+
+        .section-title h2 {
+          font-size: 2rem;
+        }
+
+        .about-stats {
+          grid-template-columns: 1fr;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Header -->
+    <header>
+      <div class="header-container">
+        <div class="logo">
+          <i class="fas fa-plane"></i>
+          CREED <span>AIRLINE</span> & LOGISTICS
+        </div>
+        <button class="mobile-menu-btn" id="mobileMenuBtn">
+          <i class="fas fa-bars"></i>
+        </button>
+        <nav id="mainNav">
+          <ul>
+            <li><a href="dashboard.html">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#fleet">Our Fleet</a></li>
+            <li><a href="#testimonials">Testimonials</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+      <div class="hero-content">
+        <h1>Elevating Your Travel Experience</h1>
+        <p>
+          CREED AIRLINE & LOGISTICS offers world-class air transportation and
+          cargo services with unmatched safety, comfort, and reliability.
+        </p>
+        <a href="#contact" class="btn">Book A Flight</a>
+      </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about" id="about">
+      <div class="section-title">
+        <h2>About CREED AIRLINE & LOGISTICS</h2>
+        <p>
+          With over 20 years of aviation excellence, we've been connecting
+          people and businesses across the globe
+        </p>
+      </div>
+      <div class="about-content">
+        <div class="about-text">
+          <h3>Your Trusted Partner in the Skies</h3>
+          <p>
+            Founded in 2003, CREED AIRLINE & LOGISTICS has grown from a regional
+            carrier to an international aviation leader. Our commitment to
+            safety, customer service, and operational excellence has earned us
+            numerous industry awards.
+          </p>
+          <p>
+            We operate a modern fleet of aircraft and employ over 2,500 aviation
+            professionals dedicated to making your journey seamless and
+            enjoyable.
+          </p>
+          <div class="about-stats">
+            <div class="stat-item">
+              <h4>25+</h4>
+              <p>Years Experience</p>
+            </div>
+            <div class="stat-item">
+              <h4>50+</h4>
+              <p>Destinations</p>
+            </div>
+            <div class="stat-item">
+              <h4>2.5M+</h4>
+              <p>Passengers Annually</p>
+            </div>
+            <div class="stat-item">
+              <h4>98.7%</h4>
+              <p>On-Time Performance</p>
+            </div>
+          </div>
+        </div>
+        <div class="about-image">
+          <img
+            src="https://images.unsplash.com/photo-1556388158-158ea5ccacbd?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80"
+            alt="CREED AIRLINE team"
+          />
+        </div>
+      </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services" id="services">
+      <div class="section-title">
+        <h2>Our Services</h2>
+        <p>
+          Comprehensive aviation solutions tailored to meet your travel and
+          logistics needs
+        </p>
+      </div>
+      <div class="services-grid">
+        <div class="service-card">
+          <div class="service-img">
+            <img
+              src="https://images.unsplash.com/photo-1436491865332-7a61a109cc05?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80"
+              alt="Passenger Services"
+            />
+          </div>
+          <div class="service-content">
+            <h3>Passenger Services</h3>
+            <p>
+              Experience luxury in the skies with our premium cabin classes,
+              gourmet dining, and personalized in-flight entertainment.
+            </p>
+            <a href="#" class="read-more"
+              >Learn More <i class="fas fa-arrow-right"></i
+            ></a>
+          </div>
+        </div>
+        <div class="service-card">
+          <div class="service-img">
+            <img
+              src="https://images.unsplash.com/photo-1601584115197-04ecc0da31e8?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80"
+              alt="Cargo Logistics"
+            />
+          </div>
+          <div class="service-content">
+            <h3>Cargo Logistics</h3>
+            <p>
+              Reliable air freight solutions with temperature-controlled options
+              and real-time tracking for your valuable shipments.
+            </p>
+            <a href="#" class="read-more"
+              >Learn More <i class="fas fa-arrow-right"></i
+            ></a>
+          </div>
+        </div>
+        <div class="service-card">
+          <div class="service-img">
+            <img
+              src="https://images.unsplash.com/photo-1527631746610-bca00a040d60?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80"
+              alt="Charter Flights"
+            />
+          </div>
+          <div class="service-content">
+            <h3>Charter Flights</h3>
+            <p>
+              Customized private jet solutions for business or leisure with
+              flexible scheduling and premium amenities.
+            </p>
+            <a href="#" class="read-more"
+              >Learn More <i class="fas fa-arrow-right"></i
+            ></a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Fleet Section -->
+    <section class="fleet" id="fleet">
+      <div class="section-title">
+        <h2>Our Modern Fleet</h2>
+        <p>
+          State-of-the-art aircraft designed for efficiency, comfort, and
+          environmental sustainability
+        </p>
+      </div>
+      <div class="fleet-grid">
+        <div class="fleet-card">
+          <div class="fleet-img">
+            <img
+              src="https://images.unsplash.com/photo-1556388158-158ea5ccacbd?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80"
+              alt="Boeing 787 Dreamliner"
+            />
+          </div>
+          <div class="fleet-content">
+            <h3>Boeing 787 Dreamliner</h3>
+            <p>
+              The most technologically advanced aircraft in our fleet, offering
+              unparalleled passenger comfort and fuel efficiency.
+            </p>
+            <div class="fleet-specs">
+              <div class="spec-item">
+                <span>Range</span>
+                <span>7,530 nmi</span>
+              </div>
+              <div class="spec-item">
+                <span>Capacity</span>
+                <span>290 passengers</span>
+              </div>
+              <div class="spec-item">
+                <span>Cruise Speed</span>
+                <span>Mach 0.85</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="fleet-card">
+          <div class="fleet-img">
+            <img
+              src="https://images.unsplash.com/photo-1556388158-158ea5ccacbd?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80"
+              alt="Airbus A350"
+            />
+          </div>
+          <div class="fleet-content">
+            <h3>Airbus A350</h3>
+            <p>
+              Our flagship long-haul aircraft featuring whisper-quiet cabins and
+              advanced air purification systems.
+            </p>
+            <div class="fleet-specs">
+              <div class="spec-item">
+                <span>Range</span>
+                <span>8,700 nmi</span>
+              </div>
+              <div class="spec-item">
+                <span>Capacity</span>
+                <span>325 passengers</span>
+              </div>
+              <div class="spec-item">
+                <span>Cruise Speed</span>
+                <span>Mach 0.89</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="fleet-card">
+          <div class="fleet-img">
+            <img
+              src="https://images.unsplash.com/photo-1556388158-158ea5ccacbd?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80"
+              alt="Embraer E195-E2"
+            />
+          </div>
+          <div class="fleet-content">
+            <h3>Embraer E195-E2</h3>
+            <p>
+              The quietest and most efficient single-aisle aircraft, perfect for
+              regional routes and short-haul flights.
+            </p>
+            <div class="fleet-specs">
+              <div class="spec-item">
+                <span>Range</span>
+                <span>2,600 nmi</span>
+              </div>
+              <div class="spec-item">
+                <span>Capacity</span>
+                <span>146 passengers</span>
+              </div>
+              <div class="spec-item">
+                <span>Cruise Speed</span>
+                <span>Mach 0.82</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials" id="testimonials">
+      <div class="section-title">
+        <h2>What Our Customers Say</h2>
+        <p>
+          Hear from passengers and partners who have experienced the CREED
+          difference
+        </p>
+      </div>
+      <div class="testimonial-slider">
+        <div class="testimonial">
+          <img
+            src="https://randomuser.me/api/portraits/women/43.jpg"
+            alt="Sarah Johnson"
+          />
+          <p>
+            "The level of service on CREED AIRLINE is unmatched. From check-in
+            to landing, every detail is thoughtfully considered. I won't fly
+            with anyone else for my transatlantic trips."
+          </p>
+          <h4>Sarah Johnson</h4>
+          <div class="rating">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+      <div class="section-title">
+        <h2>Contact Us</h2>
+        <p>
+          Get in touch with our team for bookings, inquiries, or partnership
+          opportunities
+        </p>
+      </div>
+      <div class="contact-container">
+        <div class="contact-info">
+          <h3>Connect With CREED</h3>
+          <div class="contact-item">
+            <i class="fas fa-map-marker-alt"></i>
+            <div>
+              <h4>Headquarters</h4>
+              <p>123 Aviation Way, Suite 500<br />New York, NY 10001</p>
+            </div>
+          </div>
+          <div class="contact-item">
+            <i class="fas fa-phone-alt"></i>
+            <div>
+              <h4>Phone</h4>
+              <p>+1 (800) 555-CREED<br />24/7 Customer Support</p>
+            </div>
+          </div>
+          <div class="contact-item">
+            <i class="fas fa-envelope"></i>
+            <div>
+              <h4>Email</h4>
+              <p>info@creedairline.com<br />bookings@creedairline.com</p>
+            </div>
+          </div>
+          <div class="contact-item">
+            <i class="fas fa-clock"></i>
+            <div>
+              <h4>Office Hours</h4>
+              <p>Monday - Friday: 8AM - 8PM EST<br />Saturday: 9AM - 5PM EST</p>
+            </div>
+          </div>
+        </div>
+        <div class="contact-form">
+          <form>
+            <input type="text" placeholder="Your Name" required />
+            <input type="email" placeholder="Your Email" required />
+            <input type="text" placeholder="Subject" />
+            <textarea placeholder="Your Message" required></textarea>
+            <button type="submit" class="btn">Send Message</button>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-4 mb-4">
+            <h4 class="mb-4">
+              <i class="fas fa-plane me-2"></i>CREED AIRLINES & LOGISTICS &copy;
+            </h4>
+            <p>
+              Your trusted partner for comfortable and affordable air travel to
+              destinations around the globe.
+            </p>
+            <div class="mt-4">
+              <a href="https://wa.me/qr/X6S43462GVKQE1" class="social-icon"
+                ><i class="fab fa-whatsapp"></i
+              ></a>
+              <a href="https://t.snapchat.com/bAb40eeA" class="social-icon"
+                ><i class="fab fa-snapchat"></i
+              ></a>
+              <a
+                href="https://x.com/Apataofisland?t=jxfwpUtyrLLHG7VfGitVtg&s=09"
+                class="social-icon"
+                ><i class="fab fa-twitter"></i
+              ></a>
+              <a
+                href="https://www.instagram.com/invites/contact/?utm_source=ig_contact_invite&utm_medium=copy_link&utm_content=qbf8guk"
+                class="social-icon"
+                ><i class="fab fa-instagram"></i
+              ></a>
+            </div>
+          </div>
+
+          <div class="col-lg-2 col-md-6 mb-4">
+            <h5 class="mb-4">Quick Links</h5>
+            <ul class="list-unstyled">
+              <li class="mb-2">
+                <a href="#" class="text-white text-decoration-none">Home</a>
+              </li>
+              <li class="mb-2">
+                <a href="#" class="text-white text-decoration-none">Flights</a>
+              </li>
+              <li class="mb-2">
+                <a href="#" class="text-white text-decoration-none"
+                  >Destinations</a
+                >
+              </li>
+              <li class="mb-2">
+                <a href="#" class="text-white text-decoration-none">Deals</a>
+              </li>
+              <li class="mb-2">
+                <a href="#" class="text-white text-decoration-none">About Us</a>
+              </li>
+            </ul>
+          </div>
+
+          <div class="col-lg-3 col-md-6 mb-4">
+            <h5 class="mb-4">Contact Us</h5>
+            <ul class="list-unstyled">
+              <li class="mb-2">
+                <i class="fas fa-map-marker-alt me-2"></i> 123 Aviation Way, New
+                York, NY
+              </li>
+              <li class="mb-2">
+                <i class="fas fa-phone me-2"></i> +1 (800) 123-4567
+              </li>
+              <li class="mb-2">
+                <i class="fas fa-envelope me-2"></i> info@creedairlines.com
+              </li>
+            </ul>
+          </div>
+
+          <div class="col-lg-3 mb-4">
+            <h5 class="mb-4">Newsletter</h5>
+            <p>Subscribe to get updates on special offers and promotions.</p>
+            <div class="input-group mb-3">
+              <input
+                type="email"
+                class="form-control"
+                placeholder="Your Email"
+              />
+              <button class="btn btn-primary" type="button">Subscribe</button>
+            </div>
+          </div>
+        </div>
+
+        <hr class="my-4 bg-light" />
+
+        <div class="row">
+          <div class="col-md-6 text-center text-md-start">
+            <p class="mb-0">
+              &copy; 2025 Creed Airlines & logistics. All rights reserved.
+            </p>
+          </div>
+          <div class="col-md-6 text-center text-md-end">
+            <a href="#" class="text-white text-decoration-none me-3"
+              >Privacy Policy</a
+            >
+            <a href="#" class="text-white text-decoration-none"
+              >Terms of Service</a
+            >
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      // Mobile Menu Toggle
+      const mobileMenuBtn = document.getElementById("mobileMenuBtn");
+      const mainNav = document.getElementById("mainNav");
+
+      mobileMenuBtn.addEventListener("click", () => {
+        mainNav.classList.toggle("active");
+      });
+
+      // Smooth Scrolling for Anchor Links
+      document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+        anchor.addEventListener("click", function (e) {
+          e.preventDefault();
+
+          if (this.getAttribute("href") === "#") return;
+
+          const target = document.querySelector(this.getAttribute("href"));
+          if (target) {
+            window.scrollTo({
+              top: target.offsetTop - 80,
+              behavior: "smooth",
+            });
+
+            // Close mobile menu if open
+            if (mainNav.classList.contains("active")) {
+              mainNav.classList.remove("active");
+            }
+          }
+        });
+      });
+
+      // Header Scroll Effect
+      window.addEventListener("scroll", () => {
+        if (window.scrollY > 100) {
+          document.querySelector("header").style.padding = "0.5rem 0";
+          document.querySelector("header").style.boxShadow =
+            "0 2px 10px rgba(0, 0, 0, 0.2)";
+        } else {
+          document.querySelector("header").style.padding = "1rem 0";
+          document.querySelector("header").style.boxShadow =
+            "0 2px 10px rgba(0, 0, 0, 0.1)";
+        }
+      });
+    </script>
+  </body>
+</html>
