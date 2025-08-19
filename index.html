@@ -3,375 +3,207 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Creed Airlines - Welcome</title>
+    <title>Software Engineer Portfolio</title>
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
     />
-    <style>
-      * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-      }
-
-      body {
-        background: linear-gradient(
-            135deg,
-            rgba(30, 85, 153, 0.85),
-            rgba(13, 35, 75, 0.9)
-          ),
-          url("https://images.unsplash.com/photo-1436491865332-7a61a109cc05?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2074&q=80")
-            no-repeat center center/cover;
-        color: white;
-        min-height: 100vh;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        text-align: center;
-        padding: 20px;
-      }
-
-      .header {
-        position: absolute;
-        top: 0;
-        width: 100%;
-        padding: 20px;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        background: rgba(0, 0, 0, 0.3);
-        z-index: 100;
-      }
-
-      .header-logo {
-        display: flex;
-        align-items: center;
-        gap: 10px;
-        font-weight: bold;
-        font-size: 1.2rem;
-      }
-
-      .nav-links {
-        display: flex;
-        gap: 20px;
-      }
-
-      .nav-links a {
-        color: white;
-        text-decoration: none;
-        transition: color 0.3s;
-      }
-
-      .nav-links a:hover {
-        color: #87cefa;
-      }
-
-      .container {
-        max-width: 800px;
-        width: 100%;
-        background: rgba(0, 32, 63, 0.85);
-        padding: 40px;
-        border-radius: 15px;
-        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
-        backdrop-filter: blur(10px);
-        border: 1px solid rgba(255, 255, 255, 0.1);
-        margin: 80px 20px 40px;
-      }
-
-      .logo {
-        margin-bottom: 20px;
-      }
-
-      .logo i {
-        font-size: 50px;
-        color: #1e90ff;
-        margin-bottom: 15px;
-      }
-
-      h1 {
-        font-size: 3.5rem;
-        margin-bottom: 10px;
-        color: #ffffff;
-        text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
-        letter-spacing: 2px;
-      }
-
-      .subtitle {
-        font-size: 1.5rem;
-        margin-bottom: 30px;
-        color: #87cefa;
-      }
-
-      .features {
-        display: flex;
-        justify-content: space-around;
-        margin: 30px 0;
-        flex-wrap: wrap;
-        gap: 15px;
-      }
-
-      .feature {
-        background: rgba(30, 144, 255, 0.2);
-        padding: 15px;
-        border-radius: 10px;
-        flex: 1;
-        min-width: 200px;
-        transition: transform 0.3s ease;
-      }
-
-      .feature:hover {
-        transform: translateY(-5px);
-        background: rgba(30, 144, 255, 0.3);
-      }
-
-      .feature i {
-        font-size: 2rem;
-        margin-bottom: 10px;
-        color: #87cefa;
-      }
-
-      .login-form {
-        background: rgba(255, 255, 255, 0.1);
-        padding: 25px;
-        border-radius: 10px;
-        margin-top: 20px;
-      }
-
-      .form-group {
-        margin-bottom: 20px;
-        text-align: left;
-      }
-
-      label {
-        display: block;
-        margin-bottom: 8px;
-        font-weight: 500;
-      }
-
-      input {
-        width: 100%;
-        padding: 12px;
-        border: none;
-        border-radius: 5px;
-        background: rgba(255, 255, 255, 0.9);
-        color: #00203f;
-        font-size: 1rem;
-      }
-
-      .login-btn {
-        background: linear-gradient(to right, #1e90ff, #0047ab);
-        color: white;
-        border: none;
-        padding: 15px 40px;
-        font-size: 1.2rem;
-        border-radius: 50px;
-        cursor: pointer;
-        transition: all 0.3s ease;
-        margin-top: 10px;
-        font-weight: bold;
-        letter-spacing: 1px;
-        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-        width: 100%;
-        max-width: 300px;
-      }
-
-      .login-btn:hover {
-        background: linear-gradient(to right, #0047ab, #1e90ff);
-        transform: translateY(-3px);
-        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
-      }
-
-      .login-btn:active {
-        transform: translateY(1px);
-      }
-
-      .footer {
-        margin-top: 30px;
-        color: #87cefa;
-        font-size: 0.9rem;
-      }
-
-      .mobile-menu-btn {
-        display: none;
-        font-size: 1.5rem;
-        background: none;
-        border: none;
-        color: white;
-        cursor: pointer;
-      }
-
-      /* Mobile Responsiveness */
-      @media (max-width: 768px) {
-        .header {
-          flex-direction: column;
-          padding: 15px;
-        }
-
-        .nav-links {
-          display: none;
-          flex-direction: column;
-          width: 100%;
-          text-align: center;
-          margin-top: 15px;
-          gap: 10px;
-        }
-
-        .nav-links.active {
-          display: flex;
-        }
-
-        .mobile-menu-btn {
-          display: block;
-          position: absolute;
-          right: 20px;
-          top: 20px;
-        }
-
-        h1 {
-          font-size: 2.5rem;
-        }
-
-        .subtitle {
-          font-size: 1.2rem;
-        }
-
-        .container {
-          padding: 25px;
-          margin: 100px 15px 30px;
-        }
-
-        .features {
-          flex-direction: column;
-        }
-
-        .feature {
-          width: 100%;
-        }
-
-        .login-btn {
-          width: 100%;
-          padding: 12px 30px;
-          font-size: 1.1rem;
-        }
-      }
-
-      @media (max-width: 480px) {
-        h1 {
-          font-size: 2rem;
-        }
-
-        .subtitle {
-          font-size: 1rem;
-        }
-
-        .container {
-          padding: 20px 15px;
-        }
-
-        .login-form {
-          padding: 15px;
-        }
-
-        .feature i {
-          font-size: 1.5rem;
-        }
-      }
-      .navbar-brand {
-        font-weight: 700;
-        font-size: 1.8rem;
-        color: #b4bdc6;
-      }
-    </style>
-  </head>
+    <link rel="stylesheet" href="./css/style0403.css">
+</head>
   <body>
-    <div class="container">
-      <div class="logo">
-        <a class="navbar-brand" href="#">
-          <i class="fas fa-plane me-2"> </i>CREED AIRLINE & LOGISTICS &copy;
-        </a>
-        <p class="subtitle">Experience the Sky Like Never Before</p>
+    <!-- Header -->
+    <header>
+      <div class="container">
+        <nav>
+          <div class="logo-container">
+            <div class="logo">CL</div>
+            <div class="logo-text"> DevLabs</div>
+          </div>
+          <div class="nav-links">
+            <a href="#skills">Skills</a>
+            <a href="#projects">Projects</a>
+            <a href="./experience.html">Experience</a>
+            <a href="#contact">Contact</a>
+          </div>
+        </nav>
       </div>
+    </header>
 
-      <div class="features">
-        <div class="feature">
-          <i class="fas fa-globe-americas"></i>
-          <h3>Global Destinations</h3>
-          <p>Fly to 100+ destinations worldwide</p>
-        </div>
-        <div class="feature">
-          <i class="fas fa-medal"></i>
-          <h3>Award Winning</h3>
-          <p>5-star rated airline 3 years running</p>
-        </div>
-        <div class="feature">
-          <i class="fas fa-concierge-bell"></i>
-          <h3>Premium Service</h3>
-          <p>Luxury service at affordable prices</p>
+    <!-- Hero Section -->
+    <section class="hero">
+      <div class="container" style="display: flex; align-items: center">
+        <div class="hero-content">
+          <h1>
+            Transforming Ideas Into
+            <span style="color: var(--accent)">Digital Reality</span>
+          </h1>
+          <div class="title">
+            Software Engineer | Frontend & Backend Engineer | Full-Stack
+            Developer | Web Developer | Cybersecurity | JavaScript Developer
+          </div>
+          <div class="profiler">
+            <img src="./image/carl3.jpg" class="rounded-circle" alt="" />
+          </div>
+          <p class="description">
+            I create seamless, responsive web applications with cutting-edge
+            technologies. With expertise across the entire stack, I bring ideas
+            to life with clean, efficient code and intuitive user experiences.
+          </p>
+          <a href="#contact" class="btn">Get In Touch</a>
         </div>
       </div>
+    </section>
 
-      <div class="login-form">
-        <h2>Member Login</h2>
-        <div class="form-group">
-          <label for="username">Username</label>
-          <input type="text" id="username" placeholder="Enter your username" />
+    <!-- Skills Section -->
+    <section id="skills">
+      <div class="container">
+        <h2 class="section-title">My Skills</h2>
+        <div class="skills-grid">
+          <div class="skill-card">
+            <h3><i class="fas fa-code"></i> Frontend Development</h3>
+            <p>
+              Creating responsive and interactive user interfaces with HTML5,
+              CSS3, JavaScript, React, Vue.js, and Angular. Focus on
+              performance, accessibility, and user experience.
+            </p>
+          </div>
+          <div class="skill-card">
+            <h3><i class="fas fa-server"></i> Backend Development</h3>
+            <p>
+              Building robust server-side applications with Node.js, Express,
+              Python, Django, PHP, and Laravel. Database design with SQL,
+              MongoDB, and efficient API development.
+            </p>
+          </div>
+          <div class="skill-card">
+            <h3><i class="fas fa-mobile-alt"></i> Responsive Design</h3>
+            <p>
+              Developing websites that work seamlessly across all devices using
+              modern CSS frameworks like Bootstrap, Tailwind CSS, and
+              Flexbox/Grid layouts.
+            </p>
+          </div>
+          <div class="skill-card">
+            <h3><i class="fas fa-database"></i> Database Management</h3>
+            <p>
+              Designing and optimizing database architectures, writing efficient
+              queries, and ensuring data integrity across PostgreSQL, MySQL,
+              MongoDB, and Redis.
+            </p>
+          </div>
+          <div class="skill-card">
+            <h3><i class="fas fa-lock-open"></i> Cybersecurity</h3>
+            <p>
+              Developing secure system architectures and frameworks., Responding
+              to and investigating security breaches or cyberattacks
+            </p>
+          </div>
+          <div class="skill-card">
+            <h3><i class="fas fa-book-open"></i> JavaScript Developer</h3>
+            <p>DOM Manipulation and Asynchronous Programming</p>
+          </div>
         </div>
-        <div class="form-group">
-          <label for="password">Password</label>
-          <input
-            type="password"
-            id="password"
-            placeholder="Enter your password"
-          />
+      </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" style="background: rgba(0, 0, 0, 0.1)">
+      <div class="container">
+        <h2 class="section-title">Featured Projects</h2>
+        <div class="projects-grid">
+          <div class="project-card">
+            <div class="project-img">E-Commerce Platform</div>
+            <div class="project-content">
+              <h3>Full-Stack E-Commerce Solution</h3>
+              <p>
+                A complete online shopping platform with product management,
+                user authentication, payment processing, and admin dashboard.
+              </p>
+            </div>
+          </div>
+          <div class="project-card">
+            <div class="project-img">Task Management App</div>
+            <div class="project-content">
+              <h3>Collaborative Task Manager</h3>
+              <p>
+                A responsive web application for team task management with
+                real-time updates, drag-and-drop interface, and progress
+                tracking.
+              </p>
+            </div>
+          </div>
+          <div class="project-card">
+            <div class="project-img">Social Media Dashboard</div>
+            <div class="project-content">
+              <h3>Analytics Dashboard</h3>
+              <p>
+                An interactive dashboard for social media analytics with data
+                visualization, custom reports, and API integrations.
+              </p>
+            </div>
+          </div>
         </div>
-        <button class="login-btn">LOGIN TO YOUR ACCOUNT</button>
       </div>
+    </section>
 
-      <div class="footer">
-        <p>
-          © 2023 Creed Airlines. All rights reserved. |
-          <a href="#" style="color: #87cefa">Create Account</a> |
-          <a href="#" style="color: #87cefa">Forgot Password?</a>
-        </p>
+    <!-- Contact Section -->
+    <section id="contact">
+      <div class="container">
+        <h2 class="section-title">Get In Touch</h2>
+        <div class="contact-container">
+          <div class="contact-info">
+            <div class="contact-item">
+              <i class="fas fa-envelope"></i>
+              <div>
+                <h3>Email</h3>
+                <p>dcarulose@gmail.com</p>
+              </div>
+            </div>
+            <div class="contact-item">
+              <i class="fas fa-map-marker-alt"></i>
+              <div>
+                <h3>Location</h3>
+                <p>San Francisco, CA & Boston, MA</p>
+              </div>
+            </div>
+            <div class="contact-item">
+              <i class="fas fa-phone"></i>
+              <div>
+                <h3>Phone</h3>
+                <p>+1 (765) 767-9880</p>
+              </div>
+            </div>
+          </div>
+          <div class="contact-form">
+            <form>
+              <div class="form-group">
+                <label for="name">Name</label>
+                <input type="text" id="name" placeholder="Your Name" />
+              </div>
+              <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" placeholder="Your Email" />
+              </div>
+              <div class="form-group">
+                <label for="message">Message</label>
+                <textarea id="message" placeholder="Your Message"></textarea>
+              </div>
+              <button type="submit" class="btn">Send Message</button>
+            </form>
+          </div>
+        </div>
       </div>
-    </div>
+    </section>
 
-    <script>
-      // Mobile menu toggle
-      const menuToggle = document.getElementById("menuToggle");
-      const navLinks = document.getElementById("navLinks");
-
-      menuToggle.addEventListener("click", () => {
-        navLinks.classList.toggle("active");
-      });
-
-      // Simple animation for the login button
-      document
-        .querySelector(".login-btn")
-        .addEventListener("mouseover", function () {
-          this.style.transform = "scale(1.05)";
-        });
-
-      document
-        .querySelector(".login-btn")
-        .addEventListener("mouseout", function () {
-          this.style.transform = "scale(1)";
-        });
-
-      // Simple focus effect for inputs
-      const inputs = document.querySelectorAll("input");
-      inputs.forEach((input) => {
-        input.addEventListener("focus", () => {
-          input.style.boxShadow = "0 0 0 3px rgba(30, 144, 255, 0.5)";
-        });
-
-        input.addEventListener("blur", () => {
-          input.style.boxShadow = "none";
-        });
-      });
-    </script>
+    <!-- Footer -->
+    <footer>
+      <div class="container">
+        <div class="owner">
+            Owned by Carulose Demers
+        </div>
+        <br>
+        <p>&copy; 2025 DevLabs. All rights reserved.</p>
+      </div>
+    </footer>
   </body>
 </html>
