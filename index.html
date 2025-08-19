@@ -3,8 +3,11 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Creed Airline & Logistics - Login</title>
-    <link rel="shortcut icon" href="./image/creed-airline.ico" type="image/x-icon">
+    <title>Creed Airlines - Welcome</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
     <style>
       * {
         margin: 0;
@@ -14,185 +17,361 @@
       }
 
       body {
-        background-color: #1a2a6c;
-        background: linear-gradient(rgba(0, 84, 179, 0.7), rgba(0, 51, 102, 0.8)), 
-                        url('https://images.unsplash.com/photo-1436491865332-7a61a109cc05?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
-        height: 100vh;
+        background: linear-gradient(
+            135deg,
+            rgba(30, 85, 153, 0.85),
+            rgba(13, 35, 75, 0.9)
+          ),
+          url("https://images.unsplash.com/photo-1436491865332-7a61a109cc05?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2074&q=80")
+            no-repeat center center/cover;
+        color: white;
+        min-height: 100vh;
         display: flex;
+        flex-direction: column;
         justify-content: center;
         align-items: center;
+        text-align: center;
+        padding: 20px;
       }
 
-      .login-container {
-        background-color: rgba(255, 255, 255, 0.9);
-        border-radius: 10px;
-        box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
-        width: 400px;
+      .header {
+        position: absolute;
+        top: 0;
+        width: 100%;
+        padding: 20px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background: rgba(0, 0, 0, 0.3);
+        z-index: 100;
+      }
+
+      .header-logo {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        font-weight: bold;
+        font-size: 1.2rem;
+      }
+
+      .nav-links {
+        display: flex;
+        gap: 20px;
+      }
+
+      .nav-links a {
+        color: white;
+        text-decoration: none;
+        transition: color 0.3s;
+      }
+
+      .nav-links a:hover {
+        color: #87cefa;
+      }
+
+      .container {
+        max-width: 800px;
+        width: 100%;
+        background: rgba(0, 32, 63, 0.85);
         padding: 40px;
-        text-align: center;
+        border-radius: 15px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+        backdrop-filter: blur(10px);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        margin: 80px 20px 40px;
       }
 
       .logo {
+        margin-bottom: 20px;
+      }
+
+      .logo i {
+        font-size: 50px;
+        color: #1e90ff;
+        margin-bottom: 15px;
+      }
+
+      h1 {
+        font-size: 3.5rem;
+        margin-bottom: 10px;
+        color: #ffffff;
+        text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+        letter-spacing: 2px;
+      }
+
+      .subtitle {
+        font-size: 1.5rem;
         margin-bottom: 30px;
+        color: #87cefa;
       }
 
-      .logo h1 {
-        color: rgb(36, 15, 94);
-        font-size: 28px;
-        margin-bottom: 5px;
+      .features {
+        display: flex;
+        justify-content: space-around;
+        margin: 30px 0;
+        flex-wrap: wrap;
+        gap: 15px;
       }
 
-      .logo p {
-        color: #555;
-        font-size: 14px;
+      .feature {
+        background: rgba(30, 144, 255, 0.2);
+        padding: 15px;
+        border-radius: 10px;
+        flex: 1;
+        min-width: 200px;
+        transition: transform 0.3s ease;
+      }
+
+      .feature:hover {
+        transform: translateY(-5px);
+        background: rgba(30, 144, 255, 0.3);
+      }
+
+      .feature i {
+        font-size: 2rem;
+        margin-bottom: 10px;
+        color: #87cefa;
+      }
+
+      .login-form {
+        background: rgba(255, 255, 255, 0.1);
+        padding: 25px;
+        border-radius: 10px;
+        margin-top: 20px;
+      }
+
+      .form-group {
+        margin-bottom: 20px;
+        text-align: left;
+      }
+
+      label {
+        display: block;
+        margin-bottom: 8px;
         font-weight: 500;
       }
 
-      .login-form input {
+      input {
         width: 100%;
-        padding: 12px 15px;
-        margin-bottom: 20px;
-        border: 1px solid #ddd;
+        padding: 12px;
+        border: none;
         border-radius: 5px;
-        font-size: 14px;
-        transition: all 0.3s;
-      }
-
-      .login-form input:focus {
-        border-color: #1a2a6c;
-        outline: none;
-        box-shadow: 0 0 5px rgba(26, 42, 108, 0.3);
+        background: rgba(255, 255, 255, 0.9);
+        color: #00203f;
+        font-size: 1rem;
       }
 
       .login-btn {
-        background: linear-gradient(to right, #354998, #737275);
+        background: linear-gradient(to right, #1e90ff, #0047ab);
         color: white;
         border: none;
-        padding: 12px;
-        width: 100%;
-        border-radius: 5px;
-        font-size: 16px;
-        font-weight: 600;
+        padding: 15px 40px;
+        font-size: 1.2rem;
+        border-radius: 50px;
         cursor: pointer;
-        transition: all 0.3s;
-        margin-bottom: 20px;
+        transition: all 0.3s ease;
+        margin-top: 10px;
+        font-weight: bold;
+        letter-spacing: 1px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        width: 100%;
+        max-width: 300px;
       }
 
       .login-btn:hover {
-        background: linear-gradient(to right, #7d7e81, #394092);
-        transform: translateY(-2px);
+        background: linear-gradient(to right, #0047ab, #1e90ff);
+        transform: translateY(-3px);
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
       }
 
-      .forgot-password {
-        display: block;
-        color: #555;
-        text-decoration: none;
-        font-size: 13px;
-        margin-bottom: 20px;
+      .login-btn:active {
+        transform: translateY(1px);
       }
 
-      .forgot-password:hover {
-        color: #1a2a6c;
-        text-decoration: underline;
+      .footer {
+        margin-top: 30px;
+        color: #87cefa;
+        font-size: 0.9rem;
       }
 
-      .divider {
-        display: flex;
-        align-items: center;
-        margin: 20px 0;
-        color: #777;
-        font-size: 13px;
+      .mobile-menu-btn {
+        display: none;
+        font-size: 1.5rem;
+        background: none;
+        border: none;
+        color: white;
+        cursor: pointer;
       }
 
-      .divider::before,
-      .divider::after {
-        content: "";
-        flex: 1;
-        border-bottom: 1px solid #ddd;
+      /* Mobile Responsiveness */
+      @media (max-width: 768px) {
+        .header {
+          flex-direction: column;
+          padding: 15px;
+        }
+
+        .nav-links {
+          display: none;
+          flex-direction: column;
+          width: 100%;
+          text-align: center;
+          margin-top: 15px;
+          gap: 10px;
+        }
+
+        .nav-links.active {
+          display: flex;
+        }
+
+        .mobile-menu-btn {
+          display: block;
+          position: absolute;
+          right: 20px;
+          top: 20px;
+        }
+
+        h1 {
+          font-size: 2.5rem;
+        }
+
+        .subtitle {
+          font-size: 1.2rem;
+        }
+
+        .container {
+          padding: 25px;
+          margin: 100px 15px 30px;
+        }
+
+        .features {
+          flex-direction: column;
+        }
+
+        .feature {
+          width: 100%;
+        }
+
+        .login-btn {
+          width: 100%;
+          padding: 12px 30px;
+          font-size: 1.1rem;
+        }
       }
 
-      .divider::before {
-        margin-right: 10px;
-      }
+      @media (max-width: 480px) {
+        h1 {
+          font-size: 2rem;
+        }
 
-      .divider::after {
-        margin-left: 10px;
-      }
+        .subtitle {
+          font-size: 1rem;
+        }
 
-      .signup-link {
-        font-size: 14px;
-        color: #555;
-      }
+        .container {
+          padding: 20px 15px;
+        }
 
-      .signup-link a {
-        color: #1a2a6c;
-        text-decoration: none;
-        font-weight: 600;
-      }
+        .login-form {
+          padding: 15px;
+        }
 
-      .signup-link a:hover {
-        text-decoration: underline;
+        .feature i {
+          font-size: 1.5rem;
+        }
       }
-      </style>
+      .navbar-brand {
+        font-weight: 700;
+        font-size: 1.8rem;
+        color: #b4bdc6;
+      }
+    </style>
   </head>
   <body>
-    <nav class="navbar navbar-expand-lg navbar-light sticky-top">
-      <div class="container">
-        <a class="navbar-brand">
-          <i class="fas fa-plane me-2"></i>CREED AIRLINE & LOGISTI&copy;S
-        </a>
-        <button
-          class="navbar-toggler"
-          type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#navbarNav"
-        >
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-          <ul class="navbar-nav ms-auto">
-            <li class="nav-item">
-              <a class="nav-link active" href="#">Home</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="./mypjbt2.html">Destinations</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="dashboard.html">Dashboard</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="about.html">About</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="">Contact</a>
-            </li>
-          </ul>
-          <div class="ms-3">
-            <a href="login.html">
-              <button class="btn btn-outline-primary">Login</button>
-            </a>
-          </div>
-        </div>
-      </div>
-    </nav>
- 
-     <div class="login-container">
+    <div class="container">
       <div class="logo">
-       <h1>&#9992; CREED AIRLINE & LOGISTICS &copy;</h1>
-        <p>Elevating Your Journey</p>
-         </div>form class="login-form" action="#" method="POST">
-        <input type="text" placeholder="Username or Email" required />
-        <input type="password" placeholder="Password" required />
-        <button type="submit" class="login-btn">LOGIN</button>
-        <a href="#" class="forgot-password">Forgot Password?</a>
-        
-
-        <div class="divider">OR</div>
-
-        <div class="signup-link">
-          Don't have an account? <a href="#">Sign up</a>
-        </div>
-      </form>
+        <a class="navbar-brand" href="#">
+          <i class="fas fa-plane me-2"> </i>CREED AIRLINE & LOGISTICS &copy;
+        </a>
+        <p class="subtitle">Experience the Sky Like Never Before</p>
       </div>
-     </body>
+
+      <div class="features">
+        <div class="feature">
+          <i class="fas fa-globe-americas"></i>
+          <h3>Global Destinations</h3>
+          <p>Fly to 100+ destinations worldwide</p>
+        </div>
+        <div class="feature">
+          <i class="fas fa-medal"></i>
+          <h3>Award Winning</h3>
+          <p>5-star rated airline 3 years running</p>
+        </div>
+        <div class="feature">
+          <i class="fas fa-concierge-bell"></i>
+          <h3>Premium Service</h3>
+          <p>Luxury service at affordable prices</p>
+        </div>
+      </div>
+
+      <div class="login-form">
+        <h2>Member Login</h2>
+        <div class="form-group">
+          <label for="username">Username</label>
+          <input type="text" id="username" placeholder="Enter your username" />
+        </div>
+        <div class="form-group">
+          <label for="password">Password</label>
+          <input
+            type="password"
+            id="password"
+            placeholder="Enter your password"
+          />
+        </div>
+        <button class="login-btn">LOGIN TO YOUR ACCOUNT</button>
+      </div>
+
+      <div class="footer">
+        <p>
+          © 2023 Creed Airlines. All rights reserved. |
+          <a href="#" style="color: #87cefa">Create Account</a> |
+          <a href="#" style="color: #87cefa">Forgot Password?</a>
+        </p>
+      </div>
+    </div>
+
+    <script>
+      // Mobile menu toggle
+      const menuToggle = document.getElementById("menuToggle");
+      const navLinks = document.getElementById("navLinks");
+
+      menuToggle.addEventListener("click", () => {
+        navLinks.classList.toggle("active");
+      });
+
+      // Simple animation for the login button
+      document
+        .querySelector(".login-btn")
+        .addEventListener("mouseover", function () {
+          this.style.transform = "scale(1.05)";
+        });
+
+      document
+        .querySelector(".login-btn")
+        .addEventListener("mouseout", function () {
+          this.style.transform = "scale(1)";
+        });
+
+      // Simple focus effect for inputs
+      const inputs = document.querySelectorAll("input");
+      inputs.forEach((input) => {
+        input.addEventListener("focus", () => {
+          input.style.boxShadow = "0 0 0 3px rgba(30, 144, 255, 0.5)";
+        });
+
+        input.addEventListener("blur", () => {
+          input.style.boxShadow = "none";
+        });
+      });
+    </script>
+  </body>
 </html>

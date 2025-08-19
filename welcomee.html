@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Creed Airline & Logistics - Login</title>
+    <link rel="shortcut icon" href="./image/creed-airline.ico" type="image/x-icon">
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      }
+
+      body {
+        background-color: #1a2a6c;
+        background: linear-gradient(rgba(0, 84, 179, 0.7), rgba(0, 51, 102, 0.8)), 
+                        url('https://images.unsplash.com/photo-1436491865332-7a61a109cc05?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .login-container {
+        background-color: rgba(255, 255, 255, 0.9);
+        border-radius: 10px;
+        box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+        width: 400px;
+        padding: 40px;
+        text-align: center;
+      }
+
+      .logo {
+        margin-bottom: 30px;
+      }
+
+      .logo h1 {
+        color: rgb(36, 15, 94);
+        font-size: 28px;
+        margin-bottom: 5px;
+      }
+
+      .logo p {
+        color: #555;
+        font-size: 14px;
+        font-weight: 500;
+      }
+
+      .login-form input {
+        width: 100%;
+        padding: 12px 15px;
+        margin-bottom: 20px;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+        font-size: 14px;
+        transition: all 0.3s;
+      }
+
+      .login-form input:focus {
+        border-color: #1a2a6c;
+        outline: none;
+        box-shadow: 0 0 5px rgba(26, 42, 108, 0.3);
+      }
+
+      .login-btn {
+        background: linear-gradient(to right, #354998, #737275);
+        color: white;
+        border: none;
+        padding: 12px;
+        width: 100%;
+        border-radius: 5px;
+        font-size: 16px;
+        font-weight: 600;
+        cursor: pointer;
+        transition: all 0.3s;
+        margin-bottom: 20px;
+      }
+
+      .login-btn:hover {
+        background: linear-gradient(to right, #7d7e81, #394092);
+        transform: translateY(-2px);
+      }
+
+      .forgot-password {
+        display: block;
+        color: #555;
+        text-decoration: none;
+        font-size: 13px;
+        margin-bottom: 20px;
+      }
+
+      .forgot-password:hover {
+        color: #1a2a6c;
+        text-decoration: underline;
+      }
+
+      .divider {
+        display: flex;
+        align-items: center;
+        margin: 20px 0;
+        color: #777;
+        font-size: 13px;
+      }
+
+      .divider::before,
+      .divider::after {
+        content: "";
+        flex: 1;
+        border-bottom: 1px solid #ddd;
+      }
+
+      .divider::before {
+        margin-right: 10px;
+      }
+
+      .divider::after {
+        margin-left: 10px;
+      }
+
+      .signup-link {
+        font-size: 14px;
+        color: #555;
+      }
+
+      .signup-link a {
+        color: #1a2a6c;
+        text-decoration: none;
+        font-weight: 600;
+      }
+
+      .signup-link a:hover {
+        text-decoration: underline;
+      }
+      </style>
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-light sticky-top">
+      <div class="container">
+        <a class="navbar-brand">
+          <i class="fas fa-plane me-2"></i>CREED AIRLINE & LOGISTI&copy;S
+        </a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link active" href="#">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="./mypjbt2.html">Destinations</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="dashboard.html">Dashboard</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="about.html">About</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="">Contact</a>
+            </li>
+          </ul>
+          <div class="ms-3">
+            <a href="login.html">
+              <button class="btn btn-outline-primary">Login</button>
+            </a>
+          </div>
+        </div>
+      </div>
+    </nav>
+ 
+     <div class="login-container">
+      <div class="logo">
+       <h1>&#9992; CREED AIRLINE & LOGISTICS &copy;</h1>
+        <p>Elevating Your Journey</p>
+         </div>form class="login-form" action="#" method="POST">
+        <input type="text" placeholder="Username or Email" required />
+        <input type="password" placeholder="Password" required />
+        <button type="submit" class="login-btn">LOGIN</button>
+        <a href="#" class="forgot-password">Forgot Password?</a>
+        
+
+        <div class="divider">OR</div>
+
+        <div class="signup-link">
+          Don't have an account? <a href="#">Sign up</a>
+        </div>
+      </form>
+      </div>
+     </body>
+</html>
